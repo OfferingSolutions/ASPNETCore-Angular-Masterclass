@@ -1,0 +1,12 @@
+<div class="starter-template">
+  <p>
+    <app-todo-form (todoAdded)="addTodo($event)"></app-todo-form>
+  </p>
+  <p>
+    <app-todo-list
+      [items]="items"
+      [doneItems]="doneItems"
+      (markAsDone)="markAsDone($event)"
+    ></app-todo-list>
+  </p>
+</div>

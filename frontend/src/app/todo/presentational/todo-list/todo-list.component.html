@@ -1,0 +1,37 @@
+<div class="list-group d-flex justify-content-between ">
+  <a
+    *ngFor="let item of items"
+    [routerLink]="['/todo', item.id]"
+    class="list-group-item list-group-item-action"
+  >
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{ item.value }}</h5>
+      <small>{{ item.created | date: 'hh.MM.yyyy HH:mm' }}</small>
+    </div>
+    <div class="float-right">
+      <button
+        type="button"
+        (click)="moveToDone($event, item)"
+        class="btn btn-primary btn-sm"
+      >
+        Done
+      </button>
+    </div>
+  </a>
+</div>
+
+<div class="mt-5">
+  <h2>Done items</h2>
+  <div class="list-group d-flex justify-content-between ">
+    <a
+      *ngFor="let item of doneItems"
+      [routerLink]="['/todo', item.id]"
+      class="list-group-item list-group-item-action"
+    >
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ item.value }}</h5>
+        <small>{{ item.created | date: 'hh.MM.yyyy HH:mm' }}</small>
+      </div>
+    </a>
+  </div>
+</div>
