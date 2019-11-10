@@ -31,6 +31,7 @@ namespace TodoApi
             services.AddControllers();
 
             services.AddDbContext<TodoDbContext>(opt => opt.UseInMemoryDatabase("TodoDb"));
+            services.AddScoped<ITodoRepository, TodoRepository>();
 
             services.AddCors(options =>
             {
