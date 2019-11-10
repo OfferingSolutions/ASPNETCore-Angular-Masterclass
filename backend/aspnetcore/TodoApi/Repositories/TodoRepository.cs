@@ -21,17 +21,19 @@ namespace TodoApi.Repositories
 
         public TodoEntity Add(TodoEntity item)
         {
-            throw new NotImplementedException();
+            _todoDbContext.TodoItems.Add(item);
+            return item;
         }
 
         public void Delete(TodoEntity item)
         {
-            throw new NotImplementedException();
+            _todoDbContext.TodoItems.Remove(item);
         }
 
         public TodoEntity Update(Guid id, TodoEntity item)
         {
-            throw new NotImplementedException();
+            _todoDbContext.TodoItems.Update(item);
+            return item;
         }
 
         public IEnumerable<TodoEntity> GetAll(bool? done)

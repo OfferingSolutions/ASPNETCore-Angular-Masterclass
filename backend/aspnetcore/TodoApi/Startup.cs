@@ -46,6 +46,8 @@ namespace TodoApi
                     });
             });
 
+            services.AddRouting(config => config.LowercaseUrls = true);
+
             services.AddMappingProfiles();
 
             services.AddSwaggerGen(c =>
@@ -80,6 +82,7 @@ namespace TodoApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                
             });
         }
     }
